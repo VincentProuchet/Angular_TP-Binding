@@ -1,0 +1,18 @@
+<div class="container">
+  <form (ngSubmit)="startSearch()" [formGroup]="searchForm" class="form-inline well well-in">
+    <div class="form-group col-md-5">
+      <label for="filmSearch">Veuillez entrez un titre de film</label>
+      <input type="text" name="titre" id="filmSearch" class="form-control" placeholder="Titre du film"
+        formControlName="titre">
+    </div>
+    <div>
+      <div class="form-group col-md-5">
+        <label for="annee">Veuillez choisir une année</label>
+        <input type="number" name="annee" id="annee" min="1900" max="2022" step="1" value="2018" class="form-control"
+          formControlName="annee">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Rechercher</button>
+  </form>
+
+</div>
