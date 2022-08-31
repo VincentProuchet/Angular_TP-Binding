@@ -4,7 +4,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from '@angular/router';
 import { FilmsComponent } from './films.component';
 import { SearchformComponent } from './searchform/searchform.component';
-
+import { SearchmovieService } from './services/searchmovie.service';
+import { HttpClientModule } from "@angular/common/http";
+import { ListDirective } from './directives/list.directive';
 const routes: Routes = [
   {
     path: 'films', component: FilmsComponent
@@ -16,12 +18,17 @@ const routes: Routes = [
   declarations: [
     FilmsComponent,
     SearchformComponent,
+    ListDirective,
 
+  ],
+  providers: [
+    SearchmovieService
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ]
 })
